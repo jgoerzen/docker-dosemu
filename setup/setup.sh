@@ -3,8 +3,15 @@
 set -e
 set -x
 
+cd /tmp/setup
+tar -zxf unfs3-0.9.22.tar.gz
+cd unfs3-0.9.22
+./configure
+make
+make install
+
+
 mkdir -p /dos/drive_{c,d,e,f,g,y}
-cp -r /usr/lib/dosemu/drive_z/bin /dos/drive_y/DOS
 mkdir /dos/drive_y/SCRIPTS
 
 DOSBOXCONF="`dosbox -printconf`"

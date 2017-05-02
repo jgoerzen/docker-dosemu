@@ -1,0 +1,1 @@
+qemu-system-i386 -localtime freedos-c.img -cdrom FD12CD.iso -boot c -netdev user,id=user.0 -device ne2k_isa,irq=5,netdev=user.0 -monitor stdio
