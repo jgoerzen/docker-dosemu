@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export DISPLAY=:1
+
+qemu-system-i386 -localtime /dos/freedos-c.img -boot c \
+   -netdev user,id=user.0 -device ne2k_isa,irq=5,netdev=user.0 \
+   -name console 
+   #-vnc :10 &
+

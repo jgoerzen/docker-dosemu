@@ -10,9 +10,11 @@ cd unfs3-0.9.22
 make
 make install
 
-
-mkdir -p /dos/drive_{c,d,e,f,g,y}
+mkdir -p /dos/drive_{d,e,f,g,y}
 mkdir /dos/drive_y/SCRIPTS
+
+cd /tmp/setup
+zcat freedos-c.qcow2.gz > /dos/freedos-c.qcow2
 
 DOSBOXCONF="`dosbox -printconf`"
 mv "$DOSBOXCONF" /dos/dosbox.conf
