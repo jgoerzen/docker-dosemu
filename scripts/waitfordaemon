@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while supervisorctl status "$1" | grep -vq 'RUNNING'; do
+  echo "Waiting for nmbd"
+  sleep 1
+done
+
+shift
+exec "$@"
+

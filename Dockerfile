@@ -9,7 +9,7 @@ RUN apt-get -y --no-install-recommends install wget tightvncserver xfonts-base \
             qemu-system-x86 qemu-utils \
             xvnc4viewer tcpser ser2net && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-COPY startvnc /usr/local/bin
+COPY scripts/ /usr/local/bin/
 COPY supervisor/ /etc/supervisor/conf.d/
 COPY setup/ /tmp/setup/
 RUN /tmp/setup/setup.sh
