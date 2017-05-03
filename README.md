@@ -70,3 +70,7 @@ The data sharing comes from XFS inside DOS, and UNFS3 on Linux.
   - [Info on PATCHCRT to address Runtime error 200](http://www.pcmicro.com/elebbs/faq/rte200.html)
 - [Using FreeDOS on QEMU](https://en.wikibooks.org/wiki/QEMU/FreeDOS)
 - [FreeDOS](http://www.freedos.org/)
+- FreeDOS client
+  - [FreeDOS with client](https://www.lazybrowndog.net/freedos/virtualbox/?page_id=8)
+  - [Networking FreeDOS](http://wiki.freedos.org/wiki/index.php/Networking_FreeDOS_-_MS_Client)
+  - 
