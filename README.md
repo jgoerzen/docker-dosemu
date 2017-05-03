@@ -73,4 +73,9 @@ The data sharing comes from XFS inside DOS, and UNFS3 on Linux.
 - FreeDOS client
   - [FreeDOS with client](https://www.lazybrowndog.net/freedos/virtualbox/?page_id=8)
   - [Networking FreeDOS](http://wiki.freedos.org/wiki/index.php/Networking_FreeDOS_-_MS_Client)
-  - 
+  - [Share a Linux folder with FreeDOS](https://www.lazybrowndog.net/freedos/virtualbox/?page_id=374)
+- [QEMU networking](https://en.wikibooks.org/wiki/QEMU/Networking#SMB_server)
+  - [QEMU's SMB server](https://wiki.archlinux.org/index.php/QEMU#QEMU.27s_built-in_SMB_server)
+- [strace on Docker](https://github.com/moby/moby/issues/21051)
+  - magic incantation was: --privileged --cap-add SYS_PTRACE --security-opt seccomp:unconfined
+
