@@ -5,6 +5,8 @@ while supervisorctl status "$1" | grep -vq 'RUNNING'; do
   sleep 1
 done
 
+# An additional wait, just to be safe
+wait 3
 shift
 exec "$@"
 
