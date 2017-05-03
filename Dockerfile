@@ -6,8 +6,8 @@ RUN apt-get -y -u dist-upgrade
 RUN apt-get -y --no-install-recommends install tightvncserver xfonts-base \
             lwm xterm vim-tiny less wget ca-certificates balance \
             supervisor zip unzip pwgen xdotool telnet mtools nano \
-            qemu-system-x86 qemu-utils build-essential gcc bison flex \
-            xvnc4viewer rpcbind && \
+            qemu-system-x86 qemu-utils \
+            xvnc4viewer && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir /tmp/setup
 COPY setup/sums /tmp/setup
