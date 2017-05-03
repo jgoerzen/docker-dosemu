@@ -15,3 +15,7 @@ next steps....
    mount those in samba, install smb.conf
    have a script to clone and modify the image with boot commands
  
+lh fdapm apmdos per https://sourceforge.net/p/freedos/mailman/message/28199776/
+   maybe with adv:reg per the apmdos display
+   reduces CPU From 60% to 21%
+   better: idlehalt per http://help.fdos.org/en/hhstndrd/cnfigsys/idlehalt.htm
