@@ -8,3 +8,10 @@ portmap
 http://mirrors.vbi.vt.edu/mirrors/linux/slackware/slackware-10.2/pasture/source/pcnfsd.93.02.16/
 patchutils
 
+next steps....
+   LATER: identify FreeDOS bits to move to shared drive.  Move them, then...
+   truncate the raw image (100M should do it)
+   set up /dos/drive_f and /dos/drive_g
+   mount those in samba, install smb.conf
+   have a script to clone and modify the image with boot commands
+ 
