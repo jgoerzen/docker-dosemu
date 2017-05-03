@@ -78,4 +78,8 @@ The data sharing comes from XFS inside DOS, and UNFS3 on Linux.
   - [QEMU's SMB server](https://wiki.archlinux.org/index.php/QEMU#QEMU.27s_built-in_SMB_server)
 - [strace on Docker](https://github.com/moby/moby/issues/21051)
   - magic incantation was: --privileged --cap-add SYS_PTRACE --security-opt seccomp:unconfined
+- Dealing with DOS not idling CPU
+  - [VirtualBox Heat](http://wiki.freedos.org/wiki/index.php/VirtualBox_-_Heat)
+  - [DOSIDLE commands](http://www.scampers.org/steve/vmware/)
+- [Dealing with RunTime Error 200](http://www.pcmicro.com/elebbs/faq/rte200.html)
 
