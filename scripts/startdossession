@@ -23,6 +23,9 @@ fi
 rm -r "$SESSPATH/.Xauthority"
 cp -r $HOME/.Xauthority "$SESSPATH"
 
+waitfordaemon vncserver
+shift
+
 # -f is an excuse.
-HOME="$SESSPATH" exec dosemu -f "$SESSPATH/dosemu.conf"
+DISPLAY=:1 HOME="$SESSPATH" exec dosemu -f "$SESSPATH/dosemu.conf" "$@"
 
