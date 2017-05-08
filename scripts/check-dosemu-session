@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Check if a dosemu session named "$1" is running.
+
+# If yes, exit with code 0 and display its PID.
+# If no, exit with code 1.
+
+pgrep -f "dosemu.*/etc/dos/sessions/$1/dosemu.conf"
+

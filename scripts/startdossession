@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# $1 - session name
+
+if [ -z "$1" ]; then
+   echo "Syntax: $0 sessionname [dosemuargs]"
+   exit 1
+fi
+
+SESSION="$1"
+SESSPATH="/dos/sessions/$1"
+
+if [ ! -e "$SESSPATH" ]; then
+  cp -a /dos/session.skel "$SESSPATH"
+fi
+
+if check-dosemu-session $SESSION; then
+  echo "dosemu session $SESSION already running; refusing to start again"
+  exit 1
+fi
+
+# Copy .Xauthority, since we have to set HOME
+rm -r "$SESSPATH/.Xauthority"
+cp -r $HOME/.Xauthority "$SESSPATH"
+
+# -f is an excuse.
+HOME="$SESSPATH" exec dosemu -f "$SESSPATH/dosemu.conf"
+
