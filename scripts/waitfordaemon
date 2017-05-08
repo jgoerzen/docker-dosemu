@@ -1,7 +1,7 @@
 #!/bin/bash
 
 while supervisorctl status "$1" | grep -vq 'RUNNING'; do
-  echo "Waiting for nmbd"
+  echo "Waiting for $1"
   sleep 1
 done
 

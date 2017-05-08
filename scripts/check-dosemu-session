@@ -5,5 +5,5 @@
 # If yes, exit with code 0 and display its PID.
 # If no, exit with code 1.
 
-pgrep -f "dosemu.*/etc/dos/sessions/$1/dosemu.conf"
+pgrep -f "dosemu.*/dos/sessions/$1/dosemu.conf"
 
