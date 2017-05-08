@@ -1,5 +1,7 @@
 FROM debian:jessie
 MAINTAINER John Goerzen <jgoerzen@complete.org>
+# dosemu is in contrib
+RUN sed -i 's/main/main contrib/g' /etc/apt/sources.list
 # VNC doesn't start without xfonts-base
 RUN apt-get update && \
     apt-get -y -u dist-upgrade && \
