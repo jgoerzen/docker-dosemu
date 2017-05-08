@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
    exit 1
 fi
 
-SESSION="$1"
+export SESSION="$1"
 SESSPATH="/dos/sessions/$1"
 
 if [ ! -e "$SESSPATH" ]; then

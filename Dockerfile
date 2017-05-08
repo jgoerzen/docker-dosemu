@@ -12,6 +12,7 @@ RUN apt-get update && \
 COPY scripts/ /usr/local/bin/
 COPY supervisor/ /etc/supervisor/conf.d/
 COPY setup/ /tmp/setup/
+COPY autoexec.bat /etc/dosemu/freedos/autoexec.bat
 RUN /tmp/setup/setup.sh && rm -r /tmp/setup
 
 EXPOSE 5901
