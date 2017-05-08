@@ -13,6 +13,14 @@ for DRIVE in e f g h i j k; do
   ln -s /dos/drive_$DRIVE /etc/dosemu/drives/$DRIVE
 done
 
-mkdir /dos/sessions
+touch /dos/drive_e/BOOTUP.BAT
 
+mkdir /dos/sessions
+mkdir /dos/session.skel
+
+# These seem to be what dosemu does on start.
+#cp -rv /etc/dosemu/freedos /dos/session.skel/drive_c
+#mkdir /dos/session.skel/drive_c/tmp
+
+touch /dos/session.skel/dosemu.conf
 
