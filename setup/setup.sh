@@ -12,8 +12,10 @@ for DRIVE in e f g h i j k; do
   mkdir -p /dos/drive_$DRIVE
   ln -s /dos/drive_$DRIVE /etc/dosemu/drives/$DRIVE
 done
+mkdir /dos/drive_h/UTILS
 
-touch /dos/drive_e/BOOTUP.BAT
+echo > /dos/drive_e/BOOTUP.BAT
+unix2dos /dos/drive_e/BOOTUP.BAT
 
 mkdir /dos/sessions
 mkdir /dos/session.skel
