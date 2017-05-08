@@ -1,9 +1,9 @@
 FROM debian:jessie
 MAINTAINER John Goerzen <jgoerzen@complete.org>
 # VNC doesn't start without xfonts-base
-RUN apt-get update
-RUN apt-get -y -u dist-upgrade
-RUN apt-get -y --no-install-recommends install wget tightvncserver xfonts-base \
+RUN apt-get update && \
+    apt-get -y -u dist-upgrade && \
+    apt-get -y --no-install-recommends install wget tightvncserver xfonts-base \
             lwm xterm vim-tiny less ca-certificates balance \
             supervisor zip unzip pwgen xdotool telnet nano \
             qemu-system-x86 qemu-utils \
