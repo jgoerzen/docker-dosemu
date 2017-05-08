@@ -17,5 +17,5 @@ RUN /tmp/setup/setup.sh
 RUN apt-get -y --purge autoremove && rm -r /tmp/setup
 
 EXPOSE 5901
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["/usr/local/bin/boot-supervisord"]
 
