@@ -12,9 +12,7 @@ RUN apt-get update && \
 COPY scripts/ /usr/local/bin/
 COPY supervisor/ /etc/supervisor/conf.d/
 COPY setup/ /tmp/setup/
-RUN /tmp/setup/setup.sh
-
-RUN apt-get -y --purge autoremove && rm -r /tmp/setup
+RUN /tmp/setup/setup.sh && rm -r /tmp/setup
 
 EXPOSE 5901
 CMD ["/usr/local/bin/boot-supervisord"]
