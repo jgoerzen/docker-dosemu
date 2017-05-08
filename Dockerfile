@@ -9,7 +9,7 @@ RUN apt-get update && \
             lwm xterm vim-tiny less ca-certificates balance \
             zip unzip pwgen xdotool telnet nano \
             dosemu mtools dosfstools dos2unix inetutils-telnetd openbsd-inetd \
-            xvnc4viewer tcpser ser2net && \
+            xvnc4viewer tcpser ser2net socat && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY scripts/ /usr/local/bin/
 COPY supervisor/ /etc/supervisor/conf.d/
