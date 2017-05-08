@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get -y --no-install-recommends install wget tightvncserver xfonts-base \
             lwm xterm vim-tiny less ca-certificates balance \
             supervisor zip unzip pwgen xdotool telnet nano \
-            qemu-system-x86 qemu-utils \
+            dosemu mtools dosfstools dos2unix inetutils-telnetd openbsd-inetd \
             xvnc4viewer tcpser ser2net && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 COPY scripts/ /usr/local/bin/
