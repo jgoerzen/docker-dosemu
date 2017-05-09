@@ -20,8 +20,15 @@ if check-dosemu-session $SESSION; then
 fi
 
 # Copy .Xauthority, since we have to set HOME
-rm -r "$SESSPATH/.Xauthority"
+rm -rf "$SESSPATH/.Xauthority"
 cp -r $HOME/.Xauthority "$SESSPATH"
+
+# After the first start, we have to copy the drive stuff into here.
+DRIVESPATH="$SESSPATH/.dosemu/drives"
+if [ -e "$DRIVESPATH" ]; then
+  cp -an /etc/dosemu/drives/* "$DRIVESPATH"
+fi
+
 
 waitfordaemon vncserver
 shift
