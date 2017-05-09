@@ -1,24 +1,25 @@
-# qemu for Docker Server
+# DOSEMU for Docker Server
 
 This image can be used standalone, or as a base for other images.
+It provides a nice DOS environment using DOSEMU (similar to DOSBox
+or VirtualBox).
 
-It provides a qemu environment and a VNC console for it, running on
-port 5901.  This can be used for various guest OSs.  If you are
-interested in running DOS as a guest OS, I have a nice 
-image for you at [jgoerzen/qemu-dos](https://github.com/jgoerzen/docker-qemu-dos).
+It also provides a qemu environment and a VNC console for it, running on
+port 5901.  This can be used for various guest OSs.
 
 # Install and run
 
 You can install with:
 
-    docker pull jgoerzen/qemu
+    docker pull jgoerzen/dosemu
 
 And run with:
 
-    docker run -d -p 5901:5901 --name myqemu jgoerzen/qemu
+    docker run -d -p 5901:5901 --name mydosemu jgoerzen/dosemu
 
 This image uses supervisor; please see the supervisor/ directory for
-examples.  Adding your own processes is very simple.
+examples.  Adding your own processes is very simple.  The supervisor
+support is provided by [jgoerzen/supervisor](https://github.com/jgoerzen/docker-supervisor).
 
 # Environment variable
 
@@ -36,7 +37,7 @@ child images may alter these defaults.
 # Source
 
 This is prepared by John Goerzen <jgoerzen@complete.org> and the source
-can be found at https://github.com/jgoerzen/docker-bbs/tree/master/qemu
+can be found at <https://github.com/jgoerzen/docker-dosemu>
 
 # Copyright
 
