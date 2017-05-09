@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # $1 - session name
+set -e
 
 if [ -z "$1" ]; then
    echo "Syntax: $0 sessionname [dosemuargs]"
@@ -36,6 +37,7 @@ shift
 # Final sanity check.
 dotlockfile -p -l "$SESSPATH/jglock"
 # -f is an excuse for the session check
+stty raw
 DISPLAY=:1 HOME="$SESSPATH" exec dosemu -f "$SESSPATH/dosemu.conf" "$@"
 dotlockfile -p -u "$SESSPATH/jglock"
 
