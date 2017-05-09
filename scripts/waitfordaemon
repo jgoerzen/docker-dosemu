@@ -1,12 +1,12 @@
 #!/bin/bash
 
-while supervisorctl status "$1" | grep -vq 'RUNNING'; do
+while supervisorctl status "$1" 2>/dev/null | grep -vq 'RUNNING'; do
   echo "Waiting for $1"
   sleep 1
 done
 
 # An additional wait, just to be safe
-wait 3
+sleep 3
 shift
 exec "$@"
 
