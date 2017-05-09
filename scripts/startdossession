@@ -20,6 +20,7 @@ if check-dosemu-session $SESSION; then
   exit 1
 fi
 
+HOME=/root   # telnetd may not leave this set for us
 # Copy .Xauthority, since we have to set HOME
 rm -rf "$SESSPATH/.Xauthority"
 cp -r $HOME/.Xauthority "$SESSPATH"

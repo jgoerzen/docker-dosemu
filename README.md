@@ -21,6 +21,35 @@ This image uses supervisor; please see the supervisor/ directory for
 examples.  Adding your own processes is very simple.  The supervisor
 support is provided by [jgoerzen/supervisor](https://github.com/jgoerzen/docker-supervisor).
 
+# Installed files for DOS
+
+All the fun happens under `/dos`.
+
+By default, nodes start the net image and the console starts the basic image.
+
+Also:
+
+- `/dos/drive_e` through `drive_k` are shared to the net image systems
+   as `E:` through `K:`.
+   - `E:\BOOTUP.BAT` is called at every boot, and is a nice place to put generic
+     AUTOEXEC-typ commands.
+   - `G:` is intended to be used for applications (which, in DOS, tend to
+     write to their install directories, so this could make an ideal Docker volume)
+   - `H:` is intended to be static, and hold utilities, etc.  `H:\UTILS` is
+     added to the DOS PATH by the default startup scripts.
+   - All drives are mounted in the DOS image by the default startup scripts,
+     though it would be easy to mount the others as well.
+   - Child images may, but are not required to, follow this convention:
+
+This image uses supervisor; please see the supervisor/ directory for
+examples.  Adding your own processes is very simple.
+
+# DOS Session Management
+
+Multi-node BBSs require multiple DOS sessions.  We have to keep the `C:` separate on these,
+since it contains `TEMP`.  `/usr/local/bin/startdossession` does the hard work for us.  It is
+authoritative on how a DOS session is started.
+
 # Environment variable
 
  - `VNCPASSWORD` can set the password for the VNC console
@@ -70,4 +99,13 @@ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
 Additional software copyrights as noted.
+
+# References and information
+
+- [strace on Docker](https://github.com/moby/moby/issues/21051)
+  - magic incantation was: --privileged --cap-add SYS_PTRACE --security-opt seccomp:unconfined
+- Dealing with DOS not idling CPU
+  - [VirtualBox Heat](http://wiki.freedos.org/wiki/index.php/VirtualBox_-_Heat)
+  - [DOSIDLE commands](http://www.scampers.org/steve/vmware/)
+- [Dealing with RunTime Error 200](http://www.pcmicro.com/elebbs/faq/rte200.html)
 
