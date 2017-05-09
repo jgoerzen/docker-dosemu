@@ -26,6 +26,9 @@ cp -r $HOME/.Xauthority "$SESSPATH"
 waitfordaemon vncserver
 shift
 
-# -f is an excuse.
+# Final sanity check.
+dotlockfile -p -l "$SESSPATH/jglock"
+# -f is an excuse for the session check
 DISPLAY=:1 HOME="$SESSPATH" exec dosemu -f "$SESSPATH/dosemu.conf" "$@"
+dotlockfile -p -u "$SESSPATH/jglock"
 
